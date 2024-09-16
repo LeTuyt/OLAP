@@ -1,0 +1,56 @@
+﻿---1.	Thống kê top 3 quận có mức tiêu thụ nhiệt lớn nhất trong năm hóa đơn 2020. (FACT, DIM_DEV, DIM_REVENUE_MONTH)
+ SELECT NON EMPTY { [Measures].[Consumption Therms] } ON COLUMNS,
+ TOPCOUNT([Dim Dev].[Borough].[Borough],3,[Measures].[Consumption Therms]) ON rows
+ FROM [DW GAS OLAP] 
+ WHERE [Dim Revenue Month].[Year].&[2020];
+
+
+ ---2.	Thống kê lượng tiêu thụ gas theo tháng (FACT, DIM_REVENUE_MONTH)
+ SELECT NON EMPTY { [Measures].[Consumption Therms] } ON COLUMNS,
+ NON EMPTY ([Dim Revenue Month].[Month].[Month].ALLMEMBERS) ON ROWS
+ FROM [DW GAS OLAP]
+
+ ---3. Thống kê tổng chi phí hóa đơn cho tháng doanh thu
+ SELECT NON EMPTY { [Measures].[Current Charges] } ON COLUMNS, 
+ NON EMPTY { ([Dim Revenue Month].[Year].[Year].ALLMEMBERS * [Dim Revenue Month].[Month].[Month].ALLMEMBERS ) }ON ROWS 
+ FROM [DW GAS OLAP]
+
+ ---4. Thống kê khu phát triển có số ngày sử dụng dịch vụ lớn hơn 5000 ngày (FACT, DIM_DEV)
+ SELECT   NON EMPTY {[Measures].[Days]} ON COLUMNS,
+ NON EMPTY (FILTER ([Dim Dev].[Development Name].children, [Measures].[Days] > 5000)) on rows
+ FROM [DW GAS OLAP]
+
+  ---5.	Đơn vị cung cấp tiện ích chính có số ngày sử dụng ga cao nhất với ngày bắt đầu hóa đơn của năm 2020. (FACT, DIM_INVOICE)
+ SELECT NON EMPTY {[Measures].[Days]} ON COLUMNS,
+ TAIL (ORDER([Dim Invoice].[Underlying Utility].children, [Measures].[Days], ASC),1) on rows
+ FROM [DW GAS OLAP]
+ WHERE [Dim Invoice].[Year Service Start Date].&[2020];
+
+ ---6.	Thống kê tổng mức tiêu thụ gas của những khu phát triển mà đơn vị cung cấp tiện ích chính không phải là “NatGrid NYC”
+ SELECT NON EMPTY ([Measures].[Consumption Therms], ([Dim Invoice].[Underlying Utility].children)) ON COLUMNS,
+ NON EMPTY ([Dim Dev].[Development Name].children -
+ EXISTS ([Dim Dev].[Development Name].children,[Dim Invoice].[Underlying Utility].&[NatGrid NYC], "Fact Gas")) ON ROWS
+ FROM [DW GAS OLAP]
+
+  ---7.	Thống kê theo tháng, năm tổng lượng tiêu thụ nhiệt ở Newyork của từng đơn vị cung cấp tiện ích chính
+SELECT NON EMPTY ([Measures].[Consumption Therms], ([Dim Invoice].[Underlying Utility].children)) ON COLUMNS,
+NON EMPTY (DRILLDOWNLEVEL ([Dim Revenue Month].[Year].[Year].ALLMEMBERS * [Dim Revenue Month].[Month].[Month].ALLMEMBERS)) ON ROWS
+FROM [DW GAS OLAP]
+
+---8. Liệt kê tổng mức tiêu thụ gas  với nhà cung cấp chi nhánh là "National Grid NYC" của năm hóa đơn 2020.
+SELECT NON EMPTY ([Measures].[Consumption Therms]) ON COLUMNS,
+([Dim Vendor].[Vendor Name].&[National Grid NYC]) ON ROWS
+FROM [DW GAS OLAP]
+WHERE [Dim Revenue Month].[Year].&[2020];
+
+
+---9. Tìm doanh thu cao nhất theo quận
+SELECT NON EMPTY { [Measures].[Current Charges] } ON COLUMNS,
+TOPCOUNT([Dim Dev].[Borough].[Borough],1,[Measures].[Consumption Therms])  ON ROWS
+FROM [DW GAS OLAP]
+
+---10. Thống kê 3 quận có tổng mức tiêu thụ gas giảm dần đối với nhà cung cấp tiện ích chính là "ConEd"
+SELECT NON EMPTY ([Measures].[Consumption Therms]) ON COLUMNS,
+NON EMPTY( SUBSET(ORDER([Dim Dev].[Borough].children, ([Measures].[Consumption Therms], [Dim Invoice].[Underlying Utility].&[ConEd]), DESC), 0,3)) ON ROWS
+FROM [DW GAS OLAP]
+WHERE [Dim Invoice].[Underlying Utility].&[ConEd]

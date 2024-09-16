@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Project_Olap_SSAS_GAS</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>p69/flPDQ6M7Ok6S2peC0b59H+o=7/6/2023 1:43:15 AM7/6/2023 1:43:15 AM</TimeStamp>
+        <ID>
+          <String>DW GAS OLAP</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>3H1ZyXJ8azdmUokzRTXXuNv9WpQ=7/6/2023 1:43:42 AM7/6/2023 1:43:42 AM</TimeStamp>
+        <ID>
+          <String>DW GAS OLAP</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>28Ch/Hh6NQrWY8ClVmLUjUaaLAo=7/6/2023 1:43:55 AM7/6/2023 1:43:54 AM</TimeStamp>
+        <ID>
+          <String>Dim Dev</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>9Tguctr3WQCR1xIGOL+JzYDAtBQ=7/6/2023 1:44:08 AM7/6/2023 1:44:08 AM</TimeStamp>
+        <ID>
+          <String>Dim Invoice</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>olweoB/ydff2WKseCTDPgReRmDw=7/6/2023 1:44:19 AM7/6/2023 1:44:19 AM</TimeStamp>
+        <ID>
+          <String>Dim Vendor</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>47e2iVIfJiPtHc/OLFZLumbt9t4=7/6/2023 1:44:31 AM7/6/2023 1:44:31 AM</TimeStamp>
+        <ID>
+          <String>Dim Meter</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>mU4AANSg2Aj8DTDSd/PL3MnsUXk=7/6/2023 1:44:44 AM7/6/2023 1:44:44 AM</TimeStamp>
+        <ID>
+          <String>Dim Revenue Month</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>5Du8PSRtAJHi2CuLvqjqheeFAIc=7/6/2023 1:45:31 AM7/6/2023 1:45:31 AM</TimeStamp>
+        <ID>
+          <String>Fact Gas</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>ui6ej/bU0YD+nNkaHf7iNSkUBU4=7/7/2023 4:22:30 PM7/6/2023 1:45:31 AMJleS6f+VMSa3/n+RAwMSRWlqL8I=7/6/2023 1:45:31 AM7/6/2023 1:45:31 AM</TimeStamp>
+        <ID>
+          <String>DW GAS OLAP</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>d3eZoggZ0C2DirXMzobTW4YB5/A=7/6/2023 1:42:11 AM7/6/2023 1:42:11 AM</TimeStamp>
+      <ID>
+        <String>Project_Olap_SSAS_GAS</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2023-07-07T09:22:33.823333Z</LastDeployed>
+</DeploymentSnapshot>

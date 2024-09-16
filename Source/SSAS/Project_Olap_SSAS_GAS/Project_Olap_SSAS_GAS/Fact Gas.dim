@@ -1,0 +1,181 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ddcf890c-673b-4de8-962e-c474dd64264b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Fact Gas</ID>
+  <Name>Fact Gas</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="1b5da9f1-e2da-4b53-a22e-4424acb2155b">
+    <DataSourceViewID>DW GAS OLAP</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="2267401c-90fa-4e8f-8b66-a0d41b527710">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="3cb503eb-62af-483d-ae07-40b8e7ed64e1">
+      <ID>Fact ID</ID>
+      <Name>Fact ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7d126ba3-0fab-4be1-b2ff-7da403d65b7f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d2de9f15-6309-49a9-b16d-dc1d3ce304c1">
+            <TableID>dbo_Fact_Gas</TableID>
+            <ColumnID>Fact_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="af8cba0b-4e63-48b4-a322-1ab56a75f1db">
+          <AttributeID>Revenue Month ID</AttributeID>
+          <Name>Revenue Month ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d22171d5-cae8-45ca-b52c-b9b4d60aa682">
+          <AttributeID>Invoice ID</AttributeID>
+          <Name>Invoice ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cbdfbb1c-ca8e-4a39-b489-36076ef60377">
+          <AttributeID>Vendor ID</AttributeID>
+          <Name>Vendor ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="092f01df-00bc-490e-8d86-37d432c48f0d">
+          <AttributeID>Dev ID</AttributeID>
+          <Name>Dev ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2ef3f820-6133-4cac-8cb9-c73b99ff8d57">
+          <AttributeID>Meter ID</AttributeID>
+          <Name>Meter ID</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9e577d8c-4e50-4261-9e9e-bbf8b3a823b6">
+      <ID>Revenue Month ID</ID>
+      <Name>Revenue Month ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0699c211-7db3-4b56-b92c-5aa47f49c120">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f44f1f24-3b94-4f0e-8766-fc740ce3f485">
+            <TableID>dbo_Fact_Gas</TableID>
+            <ColumnID>Revenue_Month_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b188fc96-0f82-4617-ba96-f076fa74a610">
+      <ID>Invoice ID</ID>
+      <Name>Invoice ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6c3f35e6-3d99-48c0-91d3-831d58ca54b6">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5f8efcea-c0fc-4e14-a2d4-0cf6cfb07463">
+            <TableID>dbo_Fact_Gas</TableID>
+            <ColumnID>Invoice_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="920b9283-c308-4b5e-9ca2-0777146f8072">
+      <ID>Vendor ID</ID>
+      <Name>Vendor ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8879c58f-6813-42dc-97d2-6b733faa8434">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="89ad04d1-f6e0-44ec-bd00-57e7301297c6">
+            <TableID>dbo_Fact_Gas</TableID>
+            <ColumnID>Vendor_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ee3952ad-0252-4ac6-a354-52564197fb3b">
+      <ID>Dev ID</ID>
+      <Name>Dev ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="754eb0f9-04c6-47ac-8e97-3d4a23e88364">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="20804f2b-4a93-4e63-9bc5-cb41a77d58bf">
+            <TableID>dbo_Fact_Gas</TableID>
+            <ColumnID>Dev_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3a892f94-efc8-409f-9a56-1e091f0ca478">
+      <ID>Meter ID</ID>
+      <Name>Meter ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="288f6758-eb25-4c50-a97a-6529b9b2503a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="90e6da4d-606a-4f76-b64c-1a14878fd3ef">
+            <TableID>dbo_Fact_Gas</TableID>
+            <ColumnID>Meter_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

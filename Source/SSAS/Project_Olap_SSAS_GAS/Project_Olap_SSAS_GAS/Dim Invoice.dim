@@ -1,0 +1,385 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a5a8e542-7cb5-4bfa-9029-60dae0ab11e2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Invoice</ID>
+  <Name>Dim Invoice</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="5ded5a44-25ac-4123-94c8-18184a3823c4">
+    <DataSourceViewID>DW GAS OLAP</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="4862ad3b-ab92-4868-9357-ba7823062ad8">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="6c8a8dc7-44e2-4fc6-bb97-21035f7367a7">
+      <ID>Invoice ID</ID>
+      <Name>Invoice ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="651019b6-d50e-4086-a2a6-a1a70e719275">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cdb4d5ad-9980-4767-96cb-3c1f1f018dd6">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Invoice_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="5338b53d-665e-42bb-b5a5-180fc1d16b1f">
+          <AttributeID>UMIS BILL ID</AttributeID>
+          <Name>UMIS BILL ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c0c20091-f815-4777-9ac1-67d90bd3970a">
+          <AttributeID>Service Start Date</AttributeID>
+          <Name>Service Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="416f1d7a-9116-4d53-a4c9-56b0c832d358">
+          <AttributeID>Service End Date</AttributeID>
+          <Name>Service End Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="50f46401-700f-4c3a-80da-cae193078241">
+          <AttributeID>Meter Number</AttributeID>
+          <Name>Meter Number</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="30c971ca-7cf8-465b-b7d0-c692a92805a9">
+          <AttributeID>Estimated</AttributeID>
+          <Name>Estimated</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4a6d5578-9ec8-4a45-b34a-a4c73e5ee62e">
+          <AttributeID>Rate Class</AttributeID>
+          <Name>Rate Class</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="24d0acdd-3e1d-4c42-8416-22e9f2ea8ff8">
+          <AttributeID>Bill Analyzed</AttributeID>
+          <Name>Bill Analyzed</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6811de74-63fe-47d1-81ff-a01821fee81c">
+          <AttributeID>ES Commodity</AttributeID>
+          <Name>ES Commodity</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dfd005f5-6b6f-45db-a5ae-b50ffb626b6a">
+          <AttributeID>Underlying Utility</AttributeID>
+          <Name>Underlying Utility</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9d1bbcfe-ec30-43da-bc45-8e1acb34b211">
+          <AttributeID>Day Service Start Date</AttributeID>
+          <Name>Day Service Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cc3e5f5c-0a58-4dd8-99f3-a54b95328421">
+          <AttributeID>Month Service Start Date</AttributeID>
+          <Name>Month Service Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="637ed7cc-beb3-4fd3-8eef-7b1218729c46">
+          <AttributeID>Year Service Start Date</AttributeID>
+          <Name>Year Service Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e687aa31-75e7-4c05-bace-cb1b1ae0bfc6">
+          <AttributeID>Day Service End Date</AttributeID>
+          <Name>Day Service End Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1c32632a-9098-4219-ab42-ae52222665b8">
+          <AttributeID>Month Service End Date</AttributeID>
+          <Name>Month Service End Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="49f009ea-8709-4e7b-9d9b-da3a7f6869d4">
+          <AttributeID>Year Service End Date</AttributeID>
+          <Name>Year Service End Date</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="068b6d43-e002-4f44-a635-9c4932ea1299">
+      <ID>UMIS BILL ID</ID>
+      <Name>UMIS BILL ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="322d53f9-5e1f-4df5-9f14-93ea9ba2c05d">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ed270a3c-f2c1-4fd3-8610-9729d7792799">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>UMIS_BILL_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4fa914d8-4da0-425d-8f41-e2fcdee5b569">
+      <ID>Service Start Date</ID>
+      <Name>Service Start Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8467bd68-c5a7-4a5c-897e-efd594ef4e33">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="627f5bfa-d028-437e-a610-720880a7b79b">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Service_Start_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="870378cd-ba0a-4e3c-8052-7e4f7b9d9c19">
+      <ID>Service End Date</ID>
+      <Name>Service End Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1596b68c-fc78-4c98-9f93-bcb3c0e6a78d">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3d365a86-d840-4923-9804-b3c15113bf14">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Service_End_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="32facc7f-48ca-4439-89cf-858b89202ace">
+      <ID>Meter Number</ID>
+      <Name>Meter Number</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="24ea233c-53cc-4a9e-8000-c3960032e024">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b42f975a-6ad4-49c6-810d-06c6db600588">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Meter_Number</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a460efbe-c00d-4be6-bc13-dbd87149e675">
+      <ID>Estimated</ID>
+      <Name>Estimated</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ae65314c-e63c-4a2e-97df-1b6530c3bc06">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d5149ce5-e86e-446b-9e33-21cb66525bcf">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Estimated</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c5ed5279-6d6f-4c49-b055-94d0422dbaf0">
+      <ID>Rate Class</ID>
+      <Name>Rate Class</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="39f90144-8df4-4dcb-a09e-cbac24c9f654">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d421cd73-3c61-457f-9007-ead451355e1c">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Rate_Class</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="27a2460c-fadf-4fd1-a177-54d3f34a4fe3">
+      <ID>Bill Analyzed</ID>
+      <Name>Bill Analyzed</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b4fc5d29-74d9-4404-93d6-c7593f6c2486">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1015bc53-f10f-4ea2-91f9-75d758dfdb58">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Bill_Analyzed</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d7de0a4a-e229-4110-8d6e-624f245cce7b">
+      <ID>ES Commodity</ID>
+      <Name>ES Commodity</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e3ca902f-d3ad-48ef-a18e-4c23ee8a5c19">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bf4785ab-43d4-418b-82bf-722e3686a359">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>ES_Commodity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a2e0183e-667f-4734-8e73-c8050463564b">
+      <ID>Underlying Utility</ID>
+      <Name>Underlying Utility</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3d2eac78-26fe-4e42-962e-aa4760f9ec25">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="136df371-64ad-413d-b86b-90725d4960df">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Underlying_Utility</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="30090120-3e19-43c0-8dbd-894af4668769">
+      <ID>Day Service Start Date</ID>
+      <Name>Day Service Start Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0cb73f21-d732-40c8-88ab-c54c7c6e6825">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d2fc2107-ab60-4ec9-8e58-285c326a18dc">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Day_Service_Start_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3914e77d-706e-48bc-9a83-e3f527cacb3e">
+      <ID>Month Service Start Date</ID>
+      <Name>Month Service Start Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f865eaa3-59bf-4e3e-afe3-70f61082f837">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="67ede9f6-5b33-481d-9c91-2f24f7c86a01">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Month_Service_Start_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="854af7b9-6bb0-4cdb-b03e-4d53666a8800">
+      <ID>Year Service Start Date</ID>
+      <Name>Year Service Start Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a9645726-dd12-4f91-a6a8-28c3164829fc">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="914beb45-a7de-4242-b873-f228d9a38188">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Year_Service_Start_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="59541eb5-9c26-4c25-805a-4733763f4458">
+      <ID>Day Service End Date</ID>
+      <Name>Day Service End Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ab172b42-6fac-42df-9f0e-501a8c04c643">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9ed7a720-1983-402d-8027-e8933f645d49">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Day_Service_End_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="702ce1dc-cb1d-4fec-afcf-4cf3ce44374d">
+      <ID>Month Service End Date</ID>
+      <Name>Month Service End Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f4c416f2-bcef-4347-8c1f-4e370426f758">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="102e0028-321b-4029-9c61-1d01f86fe0d2">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Month_Service_End_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="28788b39-e506-4caa-b6a6-4823838d795e">
+      <ID>Year Service End Date</ID>
+      <Name>Year Service End Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c9a0e6a9-e35f-4fa2-8030-167e7ce25f8c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="987c0170-573c-42b8-abb1-d808f7155ac4">
+            <TableID>dbo_Dim_Invoice</TableID>
+            <ColumnID>Year_Service_End_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
